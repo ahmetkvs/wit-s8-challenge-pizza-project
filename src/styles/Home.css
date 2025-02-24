@@ -1,0 +1,34 @@
+body, html {
+    height: 100%;
+}
+
+
+.hero {
+    background-image: url("./images/iteration-1-images/home-banner.png");
+    height: 100vh;
+    
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    display: flex;
+    justify-content: center;
+}
+
+.hero main {
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+}
+.hero-logo {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.hero-slogan {
+    font-size: 4rem;
+}
