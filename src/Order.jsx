@@ -1,4 +1,5 @@
 import "./styles/Order.css";
+import PizzaFooter from "./components/PizzaFooter";
 
 export default function Order() {
   return (
@@ -22,14 +23,7 @@ export default function Order() {
       </header>
       <main className="order-content">
         <section className="pizza-section">
-          <h3 className="pizza-heading"></h3>
-          <span>
-            <p className="pizza-fiyat">85TL</p>
-            <span>
-              <p className="pizza-score">4.9</p>
-              <p className="pizza-ratingCount">(200)</p>
-            </span>
-          </span>
+          <PizzaFooter></PizzaFooter>
           <p className="pizza-description"></p>
         </section>
         <section className="form-section">

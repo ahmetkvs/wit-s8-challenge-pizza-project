@@ -35,3 +35,10 @@ header {
   text-decoration: none;
   color: white;
 }
+
+.order-content {
+  width: 40%;
+  min-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
