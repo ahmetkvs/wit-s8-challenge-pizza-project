@@ -6,9 +6,9 @@ const App = () => {
   return (
     <div>
       <h1>Teknolojik Yemekler</h1>
-      <Pizza name="Lorem" description="Lipsum pizza stuff"/>
-      <Pizza name="Morem" description="Mipsum pizza stuff"/>
-      <Pizza name="Korem" description="Kipsum pizza stufff"/>
+      <Pizza name="Lorem" description="Lipsum pizza stuff" image={"./images/iteration-1-images/home-banner.png"}/>
+      <Pizza name="Morem" description="Mipsum pizza stuff" image={"./images/iteration-1-images/home-banner.png"}/>
+      <Pizza name="Korem" description="Kipsum pizza stufff" image={"./images/iteration-1-images/home-banner.png"}/>
     </div>
   );
 };
