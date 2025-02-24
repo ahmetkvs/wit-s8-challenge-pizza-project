@@ -1,9 +1,17 @@
+import "./styles/Order.css";
+
 export default function Order() {
   return (
     <>
       <header>
-        <img src="" alt="logo" />
-        <nav>ANASAYFA SECENEKLER SIPARIS OLUSTUR</nav>
+        <div className="header-content">
+          <img src="./images/iteration-1-images/logo.svg" alt="logo" />
+          <nav>
+            <a href="#">Ana Sayfa</a>
+            <p> - </p>
+            <a href="#">Sipariş Oluştur</a>
+          </nav>
+        </div>
       </header>
       <main className="order-content">
         <section className="pizza-section">
