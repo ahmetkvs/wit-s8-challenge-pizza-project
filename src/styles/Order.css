@@ -41,4 +41,70 @@ header {
   min-width: 600px;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 10vh;
+}
+
+.pizza-description {
+  font-weight: 300;
+  margin-top: 10px;
+  font-size: 0.8rem;
+  line-height: 160%;
+}
+
+.pizzaForm-boyut,
+.pizzaForm-hamur {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.pizzaForm-boyut label {
+  font-weight: 300;
+  margin-left: 1rem;
+}
+
+.pizzaForm-init-container {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.pizzaForm-name {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.checkbox-array {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 400px;
+}
+
+.checkbox-array-item {
+  width: calc(100% / 3 - 10px); /* 3 sutün saglamak icin */
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 8px;
+}
+
+.pizzaForm-extras {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#checkbox-array-label {
+  font-weight: normal;
+}
+
+.pizzaForm-extras p {
+  font-weight: 300;
 }
