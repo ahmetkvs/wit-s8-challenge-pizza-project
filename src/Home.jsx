@@ -9,7 +9,10 @@ const Home = () => {
           alt=""
           className="hero-logo"
         />
-        <h1 className="hero-slogan">KOD ACIKTIRIR PİZZA, DOYURUR</h1>
+        <h1 className="hero-slogan">
+          <span>KOD ACIKTIRIR</span>
+          <span>PİZZA, DOYURUR</span>
+        </h1>
         <button>Acıktım</button>
       </main>
     </div>
