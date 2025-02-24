@@ -8,8 +8,15 @@ export default function Order() {
           <img src="./images/iteration-1-images/logo.svg" alt="logo" />
           <nav>
             <a href="#">Ana Sayfa</a>
-            <p> - </p>
-            <a href="#">Sipariş Oluştur</a>
+            <p>-</p>
+            <a
+              href="#"
+              style={{
+                fontWeight: "bold", //Aktif olan için
+              }}
+            >
+              Sipariş Oluştur
+            </a>
           </nav>
         </div>
       </header>
