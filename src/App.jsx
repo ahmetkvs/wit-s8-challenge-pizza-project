@@ -7,7 +7,7 @@ const App = () => {
       <h1>Teknolojik Yemekler</h1>
       <Pizza name="Lorem" description="Lipsum pizza stuff"/>
       <Pizza name="Morem" description="Mipsum pizza stuff"/>
-      <Pizza name="Korem" description="Kipsum pizza stuff"/>
+      <Pizza name="Korem" description="Kipsum pizza stufff"/>
     </div>
   );
 };
