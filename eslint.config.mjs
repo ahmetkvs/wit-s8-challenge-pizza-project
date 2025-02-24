@@ -27,7 +27,7 @@ export default [
       },
     },
     rules: {
-      "react/no-unescaped-entities": "of", // ' yerine &apos gerekli eger aciksa
+      "react/no-unescaped-entities": "off", // ' yerine &apos gerekli eger aciksa
       "react/prop-types": "off",
     },
   },
