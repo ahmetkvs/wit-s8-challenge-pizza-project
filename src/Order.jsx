@@ -25,6 +25,22 @@ export default function Order() {
   const [pizzaDoughThickness, setPizzaDoughThickness] = useState("");
   const [choosenExtras, setChoosenExtras] = useState([]);
 
+  const handleValueChange = (event) => {
+    const { value, type, checked } = event.target;
+
+    if (type === "radio") {
+      setPizzaSize(value);
+    } else if (type === "select-one") {
+      setPizzaDoughThickness(value);
+    } else if (type === "checkbox") {
+      setChoosenExtras((prevExtras) =>
+        checked
+          ? [...prevExtras, value]
+          : prevExtras.filter((item) => item !== value),
+      );
+    }
+  };
+
   return (
     <>
       <header>
@@ -67,7 +83,7 @@ export default function Order() {
               <p>Boyut Seç:</p>
               <span>
                 <input
-                  onChange={(event) => setPizzaSize(event.target.value)}
+                  onChange={handleValueChange}
                   checked={pizzaSize === "s"}
                   type="radio"
                   name="pizza-boyut"
@@ -78,7 +94,7 @@ export default function Order() {
               </span>
               <span>
                 <input
-                  onChange={(event) => setPizzaSize(event.target.value)}
+                  onChange={handleValueChange}
                   checked={pizzaSize === "m"}
                   type="radio"
                   name="pizza-boyut"
@@ -89,7 +105,7 @@ export default function Order() {
               </span>
               <span>
                 <input
-                  onChange={(event) => setPizzaSize(event.target.value)}
+                  onChange={handleValueChange}
                   checked={pizzaSize === "l"}
                   type="radio"
                   name="pizza-boyut"
@@ -103,7 +119,7 @@ export default function Order() {
               <label htmlFor="pizza-hamur">Hamur Seç:</label>
 
               <select
-                onChange={(event) => setPizzaDoughThickness(event.target.value)}
+                onChange={handleValueChange}
                 name="pizza-hamur"
                 id="pizza-hamur"
                 value={pizzaDoughThickness}
@@ -128,9 +144,7 @@ export default function Order() {
                     type="checkbox"
                     name="toppings"
                     value={topping}
-                    onChange={(event) =>
-                      setChoosenExtras([...choosenExtras, event.target.value])
-                    }
+                    onChange={handleValueChange}
                   />
                   {topping}
                 </label>
