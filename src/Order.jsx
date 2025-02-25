@@ -56,6 +56,9 @@ export default function Order() {
               <label htmlFor="pizza-hamur">Hamur Seç:</label>
 
               <select name="pizza-hamur" id="pizza-hamur">
+                <option value="" disabled selected>
+                  Hamur Kalınlığı
+                </option>
                 <option value="ince">İnce Hamur</option>
                 <option value="standart">Standart Hamur</option>
                 <option value="kalin">Kalin Hamur</option>
@@ -109,16 +112,18 @@ export default function Order() {
               <button>+</button>
             </div>
             <div className="pizzaForm-checkout">
-              <h3>Sipariş Toplamı</h3>
-              <span>
-                <p className="pizzaCheckout-extras">Seçimler</p>
-                <p>25</p>
-              </span>
-              <span className="red-text">
-                <p className="pizzaCheckout-extras">Seçimler</p>
-                <p>100</p>
-              </span>
-              <button>Sipariş Ver</button>
+              <div className="pizzaForm-checkoutTexts">
+                <h3>Sipariş Toplamı</h3>
+                <span>
+                  <p className="pizzaCheckout-extras">Seçimler</p>
+                  <p>25</p>
+                </span>
+                <span className="red-text">
+                  <p className="pizzaCheckout-extras">Seçimler</p>
+                  <p>100</p>
+                </span>
+              </div>
+              <button>SİPARİŞ VER</button>
             </div>
           </div>
         </form>

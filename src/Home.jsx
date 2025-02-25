@@ -13,7 +13,7 @@ const Home = () => {
           <span>KOD ACIKTIRIR</span>
           <span>PİZZA, DOYURUR</span>
         </h1>
-        <button>Acıktım</button>
+        <button>ACIKTIM</button>
       </main>
     </div>
   );

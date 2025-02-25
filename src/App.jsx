@@ -1,13 +1,13 @@
 import "./styles/reset.css";
 import "./styles/App.css";
 
-import Order from "./Order.jsx";
-//import Home from "./Home.jsx";
+//import Order from "./Order.jsx";
+import Home from "./Home.jsx";
 
 const App = () => {
   return (
     <div>
-      <Order />
+      <Home />
     </div>
   );
 };

@@ -1,6 +1,21 @@
+button {
+  background-color: #ffcc00;
+  border: none;
+  padding: 0.75rem 2rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 30px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #e6b800;
+}
+
 header {
-  background-color: red;
-  max-height: 200px;
+  background-color: rgb(194, 22, 22);
+  max-height: 150px;
   height: 40vh;
 }
 
@@ -70,7 +85,7 @@ header {
   flex-direction: row;
   width: 100%;
   justify-content: space-between;
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid lightgray;
 }
 
 .pizzaForm-name {
@@ -129,7 +144,7 @@ header {
 
 .pizzaForm-textInputs {
   display: flex;
-  border-top: 1px solid gray;
+  border-top: 1px solid lightgray;
 }
 
 .pizzaForm-not p {
@@ -138,7 +153,7 @@ header {
 
 .pizzaForm-textInputs input {
   border: none;
-  border-bottom: 2px solid gray;
+  border-bottom: 2px solid lightgray;
   outline: none;
   padding: 8px 0;
   transition: border-color 0.3s ease-in-out;
@@ -149,7 +164,7 @@ header {
 }
 
 footer {
-  height: 300px;
+  height: 100px;
 }
 
 .pizzaForm-checkout-container {
@@ -181,7 +196,9 @@ footer {
   justify-content: center;
   align-items: center;
   padding: 1.5rem 1.5rem;
-  background-color: aliceblue;
+  border-top: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
+  border-radius: 10%;
 }
 
 .pizzaForm-checkout {
@@ -191,15 +208,28 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.pizzaForm-checkoutTexts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 1rem;
+  width: 80%;
+  border: 1px solid lightgrey;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: none;
+  border-radius: 5px;
 }
 
 .pizzaForm-checkout button {
   width: 80%;
   border-radius: 2%;
+  font-weight: normal;
 }
 
-.pizzaForm-checkout span {
+.pizzaForm-checkoutTexts span {
   display: flex;
   flex-direction: row;
   width: 60%;
@@ -209,5 +239,3 @@ footer {
 .red-text {
   color: red;
 }
-
-/*How to add red asterisk to required */
