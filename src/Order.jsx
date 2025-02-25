@@ -1,7 +1,30 @@
+import { useState, useEffect } from "react";
 import "./styles/Order.css";
 import PizzaFooter from "./components/PizzaFooter";
 
+const extraIngrediants = [
+  "Sucuk",
+  "Mantar",
+  "Zeytin",
+  "Biber",
+  "Domates",
+  "Soğan",
+  "Jalapeño",
+  "Mozzarella",
+  "Ton Balığı",
+  "Mısır",
+  "Sosis",
+  "Ananas",
+  "Pastırma",
+  "Kekik",
+  "Peynir",
+];
+
 export default function Order() {
+  const [pizzaSize, setPizzaSize] = useState("");
+  const [pizzaDoughThickness, setPizzaDoughThickness] = useState("");
+  const [choosenExtras, setChoosenExtras] = useState([]);
+
   return (
     <>
       <header>
@@ -21,6 +44,9 @@ export default function Order() {
           </nav>
         </div>
       </header>
+      <p>{pizzaDoughThickness}</p>
+      <p>{pizzaSize}</p>
+      <p>{choosenExtras}</p>
       <main className="order-content">
         <section className="pizza-section">
           <PizzaFooter></PizzaFooter>
@@ -40,22 +66,48 @@ export default function Order() {
             <div className="pizzaForm-boyut">
               <p>Boyut Seç:</p>
               <span>
-                <input type="radio" name="pizza-boyut" id="pizza-boyut-s" />
+                <input
+                  onChange={(event) => setPizzaSize(event.target.value)}
+                  checked={pizzaSize === "s"}
+                  type="radio"
+                  name="pizza-boyut"
+                  id="pizza-boyut-s"
+                  value="s"
+                />
                 <label htmlFor="pizza-boyut-s">Küçük</label>
               </span>
               <span>
-                <input type="radio" name="pizza-boyut" id="pizza-boyut-m" />
+                <input
+                  onChange={(event) => setPizzaSize(event.target.value)}
+                  checked={pizzaSize === "m"}
+                  type="radio"
+                  name="pizza-boyut"
+                  id="pizza-boyut-m"
+                  value="m"
+                />
                 <label htmlFor="pizza-boyut-m">Orta</label>
               </span>
               <span>
-                <input type="radio" name="pizza-boyut" id="pizza-boyut-l" />
+                <input
+                  onChange={(event) => setPizzaSize(event.target.value)}
+                  checked={pizzaSize === "l"}
+                  type="radio"
+                  name="pizza-boyut"
+                  id="pizza-boyut-l"
+                  value="l"
+                />
                 <label htmlFor="pizza-boyut-l">Büyük</label>
               </span>
             </div>
             <div className="pizzaForm-hamur">
               <label htmlFor="pizza-hamur">Hamur Seç:</label>
 
-              <select name="pizza-hamur" id="pizza-hamur">
+              <select
+                onChange={(event) => setPizzaDoughThickness(event.target.value)}
+                name="pizza-hamur"
+                id="pizza-hamur"
+                value={pizzaDoughThickness}
+              >
                 <option value="" disabled selected>
                   Hamur Kalınlığı
                 </option>
@@ -70,25 +122,16 @@ export default function Order() {
             <p>En fazla 10 malzeme seçebilirsiniz. 5₺</p>
 
             <div className="checkbox-array">
-              {[
-                "Sucuk",
-                "Mantar",
-                "Zeytin",
-                "Biber",
-                "Domates",
-                "Soğan",
-                "Jalapeño",
-                "Mozzarella",
-                "Ton Balığı",
-                "Mısır",
-                "Sosis",
-                "Ananas",
-                "Pastırma",
-                "Kekik",
-                "Peynir",
-              ].map((topping, index) => (
+              {extraIngrediants.map((topping, index) => (
                 <label key={index} className="checkbox-array-item">
-                  <input type="checkbox" name="toppings" value={topping} />
+                  <input
+                    type="checkbox"
+                    name="toppings"
+                    value={topping}
+                    onChange={(event) =>
+                      setChoosenExtras([...choosenExtras, event.target.value])
+                    }
+                  />
                   {topping}
                 </label>
               ))}
@@ -102,7 +145,7 @@ export default function Order() {
             <div className="pizzaForm-not">
               <label htmlFor="costumer-name">Siparis Notu</label>
               <p>Siparişine eklemek istediğin bir not var mı?</p>
-              <input type="text" id="costumer-name" />
+              <textarea type="textarea" id="costumer-name" rows="5" cols="33" />
             </div>
           </div>
           <div className="pizzaForm-checkout-container">
