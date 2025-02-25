@@ -40,15 +40,15 @@ export default function Order() {
             <div className="pizzaForm-boyut">
               <p>Boyut Seç:</p>
               <span>
-                <input type="radio" name="pizza-boyut-s" id="pizza-boyut-s" />
+                <input type="radio" name="pizza-boyut" id="pizza-boyut-s" />
                 <label htmlFor="pizza-boyut-s">Küçük</label>
               </span>
               <span>
-                <input type="radio" name="pizza-boyut-m" id="pizza-boyut-m" />
+                <input type="radio" name="pizza-boyut" id="pizza-boyut-m" />
                 <label htmlFor="pizza-boyut-m">Orta</label>
               </span>
               <span>
-                <input type="radio" name="pizza-boyut-l" id="pizza-boyut-l" />
+                <input type="radio" name="pizza-boyut" id="pizza-boyut-l" />
                 <label htmlFor="pizza-boyut-l">Büyük</label>
               </span>
             </div>
@@ -61,10 +61,6 @@ export default function Order() {
                 <option value="kalin">Kalin Hamur</option>
               </select>
             </div>
-          </div>
-          <div className="pizzaForm-name">
-            <label htmlFor="costumer-name">İsim - Soyad:</label>
-            <input type="text" id="costumer-name" />
           </div>
           <div className="pizzaForm-extras">
             <p id="checkbox-array-label">Ek Malzemeler</p>
@@ -95,12 +91,38 @@ export default function Order() {
               ))}
             </div>
           </div>
-          <div className="pizzaForm-not"></div>
+          <div className="pizzaForm-textInputs">
+            <div className="pizzaForm-name">
+              <label htmlFor="costumer-name">İsim - Soyad:</label>
+              <input type="text" id="costumer-name" />
+            </div>
+            <div className="pizzaForm-not">
+              <label htmlFor="costumer-name">Siparis Notu</label>
+              <p>Siparişine eklemek istediğin bir not var mı?</p>
+              <input type="text" id="costumer-name" />
+            </div>
+          </div>
           <div className="pizzaForm-checkout-container">
-            <div className="pizzaForm-pizzaCounter"></div>
-            <div className="pizzaForm-checkout"></div>
+            <div className="pizzaForm-pizzaCounter">
+              <button>-</button>
+              <p>1</p>
+              <button>+</button>
+            </div>
+            <div className="pizzaForm-checkout">
+              <h3>Sipariş Toplamı</h3>
+              <span>
+                <p className="pizzaCheckout-extras">Seçimler</p>
+                <p>25</p>
+              </span>
+              <span className="red-text">
+                <p className="pizzaCheckout-extras">Seçimler</p>
+                <p>100</p>
+              </span>
+              <button>Sipariş Ver</button>
+            </div>
           </div>
         </form>
+        <footer></footer>
       </main>
     </>
   );
