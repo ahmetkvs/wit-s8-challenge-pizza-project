@@ -1,24 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "./styles/Order.css";
 import PizzaFooter from "./components/PizzaFooter";
-
-const extraIngrediants = [
-  "Sucuk",
-  "Mantar",
-  "Zeytin",
-  "Biber",
-  "Domates",
-  "Soğan",
-  "Jalapeño",
-  "Mozzarella",
-  "Ton Balığı",
-  "Mısır",
-  "Sosis",
-  "Ananas",
-  "Pastırma",
-  "Kekik",
-  "Peynir",
-];
+import Checkout from "./components/Checkout";
+import extraIngrediants from "./data/extraIngrediants";
+import PizzaCounter from "./components/PizzaCounter";
 
 const initialForm = {
   pizzaSize: "",
@@ -71,7 +56,7 @@ export default function Order() {
       <header>
         <div className="header-content">
           <img src="./images/iteration-1-images/logo.svg" alt="logo" />
-          <nav>
+          <nav id="order-nav">
             <a href="#">Ana Sayfa</a>
             <p>-</p>
             <a
@@ -196,29 +181,12 @@ export default function Order() {
             </div>
           </div>
           <div className="pizzaForm-checkout-container">
-            <div className="pizzaForm-pizzaCounter">
-              <button type="button" onClick={decreaseCounter}>
-                -
-              </button>
-              <p>{form.pizzaCounter}</p>
-              <button type="button" onClick={increaseCounter}>
-                +
-              </button>
-            </div>
-            <div className="pizzaForm-checkout">
-              <div className="pizzaForm-checkoutTexts">
-                <h3>Sipariş Toplamı</h3>
-                <span>
-                  <p className="pizzaCheckout-extras">Seçimler</p>
-                  <p>25</p>
-                </span>
-                <span className="red-text">
-                  <p className="pizzaCheckout-extras">Seçimler</p>
-                  <p>100</p>
-                </span>
-              </div>
-              <button>SİPARİŞ VER</button>
-            </div>
+            <PizzaCounter
+              increaseCounter={increaseCounter}
+              decreaseCounter={decreaseCounter}
+              pizzaCounter={form.pizzaCounter}
+            />
+            <Checkout />
           </div>
         </form>
         <footer></footer>
