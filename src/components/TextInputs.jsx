@@ -1,4 +1,9 @@
-export default function TextInputs({ userName, handleChange, userNote }) {
+export default function TextInputs({
+  userName,
+  handleChange,
+  userNote,
+  errors,
+}) {
   return (
     <div className="pizzaForm-textInputs">
       <div className="pizzaForm-name">
@@ -10,6 +15,7 @@ export default function TextInputs({ userName, handleChange, userNote }) {
           value={userName}
           onChange={handleChange}
         />
+        {errors.userName && <p className="error">{errors.userName}</p>}
       </div>
       <div className="pizzaForm-not">
         <label htmlFor="costumer-name">Siparis Notu</label>

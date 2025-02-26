@@ -271,3 +271,8 @@ footer {
 .red-text {
   color: #ce2829;
 }
+
+.error {
+  color: #ce2829;
+  font-weight: bold;
+}

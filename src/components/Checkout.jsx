@@ -1,4 +1,9 @@
-export default function Checkout({ checkoutSum, choosenExtras, extraPrice }) {
+export default function Checkout({
+  checkoutSum,
+  choosenExtras,
+  extraPrice,
+  isValid,
+}) {
   return (
     <div className="pizzaForm-checkout">
       <div className="pizzaForm-checkoutTexts">
@@ -12,7 +17,9 @@ export default function Checkout({ checkoutSum, choosenExtras, extraPrice }) {
           <p>{checkoutSum}</p>
         </span>
       </div>
-      <button type="submit">SİPARİŞ VER</button>
+      <button type="submit" disabled={!isValid}>
+        SİPARİŞ VER
+      </button>
     </div>
   );
 }

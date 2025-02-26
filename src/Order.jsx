@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import { useState, useEffect } from "react";
+import { Link, useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import axios from "axios";
 import "./styles/Order.css";
 import PizzaFooter from "./components/PizzaFooter";
@@ -29,9 +29,27 @@ const BASE_PRICE = 80; //Change this later
 const EXTRA_PRICE = 5;
 
 export default function Order() {
+  let history = useHistory();
+
   const [form, setForm] = useState(initialForm);
   const [checkoutSum, setCheckoutSum] = useState(BASE_PRICE);
+  const [errors, setErrors] = useState({});
   const [isValid, setIsValid] = useState(false);
+
+  useEffect(() => {
+    const newErrors = {};
+
+    if (form.userName.trim().length < 3) {
+      newErrors.userName = "İsim en az 3 karakter olmalıdır.";
+    }
+    if (form.choosenExtras.length < 4 || form.choosenExtras.length > 10) {
+      newErrors.choosenExtras = "En az 4, en fazla 10 malzeme seçmelisiniz.";
+    }
+
+    setErrors(newErrors);
+    setIsValid(Object.keys(newErrors).length === 0);
+  }, [form]);
+
   console.log(form);
 
   const handleChange = (event) => {
@@ -71,6 +89,9 @@ export default function Order() {
         totalPrice: checkoutSum,
       });
       console.log("Siparis Ozeti:", response.data);
+      setForm(initialForm);
+      setCheckoutSum(BASE_PRICE);
+      history.push("/success");
     } catch (error) {
       console.error("Siparis api'nda hata olustu", error);
     }
@@ -144,11 +165,18 @@ export default function Order() {
             choosenExtras={form.choosenExtras}
             handleChange={handleChange}
           />
+          {errors.choosenExtras && (
+            <p className="error">{errors.choosenExtras}</p>
+          )}
           <TextInputs
             userName={form.userName}
             userNote={form.userNote}
             handleChange={handleChange}
+            errors={{
+              userName: errors.userName,
+            }}
           />
+
           <div className="pizzaForm-checkout-container">
             <PizzaCounter
               increaseCounter={increaseCounter}
@@ -159,6 +187,7 @@ export default function Order() {
               checkoutSum={checkoutSum}
               choosenExtras={form.choosenExtras}
               extraPrice={EXTRA_PRICE}
+              isValid={isValid}
             />
           </div>
         </form>
