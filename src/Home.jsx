@@ -20,7 +20,9 @@ const Home = () => {
           <span>KOD ACIKTIRIR</span>
           <span>PİZZA, DOYURUR</span>
         </h1>
-        <button onClick={handleClick}>ACIKTIM</button>
+        <button onClick={handleClick} id="aciktim">
+          ACIKTIM
+        </button>
       </main>
     </div>
   );

@@ -46,6 +46,16 @@ export default function Order() {
       newErrors.choosenExtras = "En az 4, en fazla 10 malzeme seçmelisiniz.";
     }
 
+    //console.log(form.pizzaSize);
+
+    if (form.pizzaSize === "") {
+      newErrors.pizzaSize = "Lütfen bir boyut seçiniz";
+    }
+
+    if (form.pizzaDoughThickness === "") {
+      newErrors.pizzaSize = "Lütfen bir kalınlık seçiniz";
+    }
+
     setErrors(newErrors);
     setIsValid(Object.keys(newErrors).length === 0);
   }, [form]);

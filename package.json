@@ -18,6 +18,7 @@
   "description": "Wit Sprint 8 Challenge Pizza Project",
   "devDependencies": {
     "@vitejs/plugin-react": "^4.3.1",
+    "cypress": "^14.1.0",
     "eslint": "^9.9.1",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-react": "^7.37.1",

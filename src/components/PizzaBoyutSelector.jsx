@@ -1,7 +1,9 @@
 export default function PizzaBoyutSelector({ pizzaSize, handleChange }) {
   return (
     <div className="pizzaForm-boyut">
-      <p>Boyut Seç:</p>
+      <p>
+        Boyut Seç:<span className="error">*</span>
+      </p>
       <span>
         <input
           onChange={handleChange}
@@ -10,6 +12,7 @@ export default function PizzaBoyutSelector({ pizzaSize, handleChange }) {
           name="pizzaSize"
           id="pizza-boyut-s"
           value="s"
+          required
         />
         <label htmlFor="pizza-boyut-s">Küçük</label>
       </span>
@@ -21,6 +24,7 @@ export default function PizzaBoyutSelector({ pizzaSize, handleChange }) {
           name="pizzaSize"
           id="pizza-boyut-m"
           value="m"
+          required
         />
         <label htmlFor="pizza-boyut-m">Orta</label>
       </span>
@@ -32,6 +36,7 @@ export default function PizzaBoyutSelector({ pizzaSize, handleChange }) {
           name="pizzaSize"
           id="pizza-boyut-l"
           value="l"
+          required
         />
         <label htmlFor="pizza-boyut-l">Büyük</label>
       </span>

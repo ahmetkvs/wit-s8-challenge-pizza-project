@@ -12,7 +12,7 @@ export default function Checkout({
           <p className="pizzaCheckout-extras">Seçimler</p>
           <p>{choosenExtras.length * extraPrice}</p>
         </span>
-        <span className="red-text">
+        <span style={{ color: "red" }}>
           <p className="pizzaCheckout-extras">Toplam</p>
           <p>{checkoutSum}</p>
         </span>
