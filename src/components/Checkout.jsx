@@ -12,7 +12,7 @@ export default function Checkout({ checkoutSum, choosenExtras, extraPrice }) {
           <p>{checkoutSum}</p>
         </span>
       </div>
-      <button>SİPARİŞ VER</button>
+      <button type="submit">SİPARİŞ VER</button>
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import axios from "axios";
 import "./styles/Order.css";
 import PizzaFooter from "./components/PizzaFooter";
 import Checkout from "./components/Checkout";
@@ -30,6 +31,7 @@ const EXTRA_PRICE = 5;
 export default function Order() {
   const [form, setForm] = useState(initialForm);
   const [checkoutSum, setCheckoutSum] = useState(BASE_PRICE);
+  const [isValid, setIsValid] = useState(false);
   console.log(form);
 
   const handleChange = (event) => {
@@ -58,6 +60,20 @@ export default function Order() {
 
       return { ...prevForm, [name]: value };
     });
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    try {
+      const response = await axios.post("https://reqres.in/api/pizza", {
+        ...form,
+        totalPrice: checkoutSum,
+      });
+      console.log("Siparis Ozeti:", response.data);
+    } catch (error) {
+      console.error("Siparis api'nda hata olustu", error);
+    }
   };
 
   const increaseCounter = () => {
@@ -113,7 +129,7 @@ export default function Order() {
             scelerisque nisi sagittis et.
           </p>
         </section>
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="pizzaForm-init-container">
             <PizzaBoyutSelector
               pizzaSize={form.pizzaSize}
