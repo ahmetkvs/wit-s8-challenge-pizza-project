@@ -6,13 +6,13 @@ describe("Pizza Project Tests", () => {
   it("should navigate to the order page and find the form", () => {
     cy.contains("button", "ACIKTIM").click();
     cy.url().should("include", "/order");
-    cy.get("form").should("be.visible"); // Verify the form is present
+    cy.get("form").should("be.visible");
   });
 
   it("should disable the checkout button with invalid inputs", () => {
     cy.contains("button", "ACIKTIM").click();
 
-    // Leave pizza size and dough thickness blank (invalid)
+    //Boyut ve kalinlik bos oldugunda submit disabled
     cy.get('input[type="checkbox"][value="Sucuk"]').click();
     cy.get('input[type="checkbox"][value="Mantar"]').click();
     cy.get('input[type="checkbox"][value="Zeytin"]').click();

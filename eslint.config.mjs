@@ -2,10 +2,12 @@ import js from "@eslint/js";
 import globals from "globals";
 import prettier from "eslint-config-prettier";
 import reactPlugin from "eslint-plugin-react";
+import cypress from "eslint-plugin-cypress";
+import cypressRecommended from "eslint-plugin-cypress/configs/recommended.js";
 
-/** @type {import('eslint').Linter.Config[]} */ //Asagida autocompletion sagliyor (magic)
+/** @type {import('eslint').Linter.Config[]} */
 export default [
-  js.configs.recommended, //recommended yerine all yaparsan her seyi kontrol eder.
+  js.configs.recommended,
   {
     ...reactPlugin.configs.flat.recommended,
     settings: {
@@ -16,10 +18,9 @@ export default [
   },
   reactPlugin.configs.flat["jsx-runtime"],
   {
-    //Our Config
     files: ["**/*.js", "**/*.jsx"],
     languageOptions: {
-      globals: { ...globals.browser, ...globals.node }, //window, document gibi globaller icin, spread ile aciyoruz
+      globals: { ...globals.browser, ...globals.node },
       parserOptions: {
         ecmaFeatures: {
           jsx: true,
@@ -27,14 +28,19 @@ export default [
       },
     },
     rules: {
-      "react/no-unescaped-entities": "off", // ' yerine &apos gerekli eger aciksa
+      "react/no-unescaped-entities": "off",
       "react/prop-types": "off",
     },
   },
-  //Prettier config has to be last
-  //Burada array olarak export edilen kurallar
-  //Sirayla yukaridan asagiya birbirinin ustune ekleniyor
-  //Prettier sonda olmali.
-  //Sadece formatting yaptigi icin sonda. (detay bilmiyorum => magic)
+  {
+    files: ["**/*.cy.js"], // Apply only to Cypress spec files
+    plugins: {
+      cypress,
+    },
+    ...cypressRecommended,
+    languageOptions: {
+      globals: cypressRecommended.languageOptions.globals,
+    },
+  },
   prettier,
 ];
