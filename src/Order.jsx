@@ -2,8 +2,11 @@ import { useState } from "react";
 import "./styles/Order.css";
 import PizzaFooter from "./components/PizzaFooter";
 import Checkout from "./components/Checkout";
-import extraIngrediants from "./data/extraIngrediants";
 import PizzaCounter from "./components/PizzaCounter";
+import TextInputs from "./components/TextInputs";
+import PizzaBoyutSelector from "./components/PizzaBoyutSelector";
+import PizzaHamurSelector from "./components/PizzaHamurSelector";
+import PizzaExtras from "./components/PizzaExtras";
 
 const initialForm = {
   pizzaSize: "",
@@ -81,105 +84,29 @@ export default function Order() {
             faucibus ornare gravida, sapien nunc vehicula velit, id elementum
             mauris ipsum a dolor. Integer risus nunc, vestibulum eget venenatis
             vitae, consequat et eros. Maecenas vulputate velit dolor, eu
-            scelerisque nisi sagittis et.{" "}
+            scelerisque nisi sagittis et.
           </p>
         </section>
         <form>
           <div className="pizzaForm-init-container">
-            <div className="pizzaForm-boyut">
-              <p>Boyut Seç:</p>
-              <span>
-                <input
-                  onChange={handleChange}
-                  checked={form.pizzaSize === "s"}
-                  type="radio"
-                  name="pizzaSize"
-                  id="pizza-boyut-s"
-                  value="s"
-                />
-                <label htmlFor="pizza-boyut-s">Küçük</label>
-              </span>
-              <span>
-                <input
-                  onChange={handleChange}
-                  checked={form.pizzaSize === "m"}
-                  type="radio"
-                  name="pizzaSize"
-                  id="pizza-boyut-m"
-                  value="m"
-                />
-                <label htmlFor="pizza-boyut-m">Orta</label>
-              </span>
-              <span>
-                <input
-                  onChange={handleChange}
-                  checked={form.pizzaSize === "l"}
-                  type="radio"
-                  name="pizzaSize"
-                  id="pizza-boyut-l"
-                  value="l"
-                />
-                <label htmlFor="pizza-boyut-l">Büyük</label>
-              </span>
-            </div>
-            <div className="pizzaForm-hamur">
-              <label htmlFor="pizza-hamur">Hamur Seç:</label>
-
-              <select
-                onChange={handleChange}
-                name="pizzaDoughThickness"
-                id="pizza-hamur"
-                value={form.pizzaDoughThickness}
-              >
-                <option value="ince">İnce Hamur</option>
-                <option value="standart">Standart Hamur</option>
-                <option value="kalin">Kalin Hamur</option>
-              </select>
-            </div>
+            <PizzaBoyutSelector
+              pizzaSize={form.pizzaSize}
+              handleChange={handleChange}
+            />
+            <PizzaHamurSelector
+              pizzaDoughThickness={form.pizzaDoughThickness}
+              handleChange={handleChange}
+            />
           </div>
-          <div className="pizzaForm-extras">
-            <p id="checkbox-array-label">Ek Malzemeler</p>
-            <p>En fazla 10 malzeme seçebilirsiniz. 5₺</p>
-
-            <div className="checkbox-array">
-              {extraIngrediants.map((topping, index) => (
-                <label key={index} className="checkbox-array-item">
-                  <input
-                    type="checkbox"
-                    name="choosenExtras"
-                    value={topping}
-                    onChange={handleChange}
-                    checked={form.choosenExtras.includes(topping)}
-                  />
-                  {topping}
-                </label>
-              ))}
-            </div>
-          </div>
-          <div className="pizzaForm-textInputs">
-            <div className="pizzaForm-name">
-              <label htmlFor="costumer-name">İsim - Soyad:</label>
-              <input
-                name="userName"
-                type="text"
-                id="costumer-name"
-                value={form.userName}
-                onChange={handleChange}
-              />
-            </div>
-            <div className="pizzaForm-not">
-              <label htmlFor="costumer-name">Siparis Notu</label>
-              <p>Siparişine eklemek istediğin bir not var mı?</p>
-              <textarea
-                id="costumer-note"
-                name="userNote"
-                rows="5"
-                cols="33"
-                value={form.userNote}
-                onChange={handleChange}
-              />
-            </div>
-          </div>
+          <PizzaExtras
+            choosenExtras={form.choosenExtras}
+            handleChange={handleChange}
+          />
+          <TextInputs
+            userName={form.userName}
+            userNote={form.userNote}
+            handleChange={handleChange}
+          />
           <div className="pizzaForm-checkout-container">
             <PizzaCounter
               increaseCounter={increaseCounter}
