@@ -20,25 +20,50 @@ const extraIngrediants = [
   "Peynir",
 ];
 
+const initialForm = {
+  pizzaSize: "",
+  pizzaDoughThickness: "",
+  choosenExtras: [],
+  userName: "",
+  userNote: "",
+  pizzaCounter: 1,
+};
+
 export default function Order() {
-  const [pizzaSize, setPizzaSize] = useState("");
-  const [pizzaDoughThickness, setPizzaDoughThickness] = useState("");
-  const [choosenExtras, setChoosenExtras] = useState([]);
+  const [form, setForm] = useState(initialForm);
+  console.log(form);
 
-  const handleValueChange = (event) => {
-    const { value, type, checked } = event.target;
+  const handleChange = (event) => {
+    const { name, value, type, checked } = event.target;
 
-    if (type === "radio") {
-      setPizzaSize(value);
-    } else if (type === "select-one") {
-      setPizzaDoughThickness(value);
-    } else if (type === "checkbox") {
-      setChoosenExtras((prevExtras) =>
-        checked
-          ? [...prevExtras, value]
-          : prevExtras.filter((item) => item !== value),
-      );
-    }
+    setForm((prevForm) => {
+      if (type === "checkbox") {
+        return {
+          ...prevForm,
+          choosenExtras: checked
+            ? [...prevForm.choosenExtras, value]
+            : prevForm.choosenExtras.filter((extra) => extra !== value),
+        };
+      } else if (type === "number") {
+        return { ...prevForm, [name]: Number(value) };
+      } else {
+        return { ...prevForm, [name]: value };
+      }
+    });
+  };
+
+  const increaseCounter = () => {
+    setForm((prevForm) => ({
+      ...prevForm,
+      pizzaCounter: prevForm.pizzaCounter + 1,
+    }));
+  };
+
+  const decreaseCounter = () => {
+    setForm((prevForm) => ({
+      ...prevForm,
+      pizzaCounter: Math.max(1, prevForm.pizzaCounter - 1),
+    }));
   };
 
   return (
@@ -60,9 +85,6 @@ export default function Order() {
           </nav>
         </div>
       </header>
-      <p>{pizzaDoughThickness}</p>
-      <p>{pizzaSize}</p>
-      <p>{choosenExtras}</p>
       <main className="order-content">
         <section className="pizza-section">
           <PizzaFooter></PizzaFooter>
@@ -83,10 +105,10 @@ export default function Order() {
               <p>Boyut Seç:</p>
               <span>
                 <input
-                  onChange={handleValueChange}
-                  checked={pizzaSize === "s"}
+                  onChange={handleChange}
+                  checked={form.pizzaSize === "s"}
                   type="radio"
-                  name="pizza-boyut"
+                  name="pizzaSize"
                   id="pizza-boyut-s"
                   value="s"
                 />
@@ -94,10 +116,10 @@ export default function Order() {
               </span>
               <span>
                 <input
-                  onChange={handleValueChange}
-                  checked={pizzaSize === "m"}
+                  onChange={handleChange}
+                  checked={form.pizzaSize === "m"}
                   type="radio"
-                  name="pizza-boyut"
+                  name="pizzaSize"
                   id="pizza-boyut-m"
                   value="m"
                 />
@@ -105,10 +127,10 @@ export default function Order() {
               </span>
               <span>
                 <input
-                  onChange={handleValueChange}
-                  checked={pizzaSize === "l"}
+                  onChange={handleChange}
+                  checked={form.pizzaSize === "l"}
                   type="radio"
-                  name="pizza-boyut"
+                  name="pizzaSize"
                   id="pizza-boyut-l"
                   value="l"
                 />
@@ -119,14 +141,11 @@ export default function Order() {
               <label htmlFor="pizza-hamur">Hamur Seç:</label>
 
               <select
-                onChange={handleValueChange}
-                name="pizza-hamur"
+                onChange={handleChange}
+                name="pizzaDoughThickness"
                 id="pizza-hamur"
-                value={pizzaDoughThickness}
+                value={form.pizzaDoughThickness}
               >
-                <option value="" disabled selected>
-                  Hamur Kalınlığı
-                </option>
                 <option value="ince">İnce Hamur</option>
                 <option value="standart">Standart Hamur</option>
                 <option value="kalin">Kalin Hamur</option>
@@ -142,9 +161,10 @@ export default function Order() {
                 <label key={index} className="checkbox-array-item">
                   <input
                     type="checkbox"
-                    name="toppings"
+                    name="choosenExtras"
                     value={topping}
-                    onChange={handleValueChange}
+                    onChange={handleChange}
+                    checked={form.choosenExtras.includes(topping)}
                   />
                   {topping}
                 </label>
@@ -154,19 +174,36 @@ export default function Order() {
           <div className="pizzaForm-textInputs">
             <div className="pizzaForm-name">
               <label htmlFor="costumer-name">İsim - Soyad:</label>
-              <input type="text" id="costumer-name" />
+              <input
+                name="userName"
+                type="text"
+                id="costumer-name"
+                value={form.userName}
+                onChange={handleChange}
+              />
             </div>
             <div className="pizzaForm-not">
               <label htmlFor="costumer-name">Siparis Notu</label>
               <p>Siparişine eklemek istediğin bir not var mı?</p>
-              <textarea type="textarea" id="costumer-name" rows="5" cols="33" />
+              <textarea
+                id="costumer-note"
+                name="userNote"
+                rows="5"
+                cols="33"
+                value={form.userNote}
+                onChange={handleChange}
+              />
             </div>
           </div>
           <div className="pizzaForm-checkout-container">
             <div className="pizzaForm-pizzaCounter">
-              <button>-</button>
-              <p>1</p>
-              <button>+</button>
+              <button type="button" onClick={decreaseCounter}>
+                -
+              </button>
+              <p>{form.pizzaCounter}</p>
+              <button type="button" onClick={increaseCounter}>
+                +
+              </button>
             </div>
             <div className="pizzaForm-checkout">
               <div className="pizzaForm-checkoutTexts">
