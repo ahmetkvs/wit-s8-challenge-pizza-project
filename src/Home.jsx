@@ -1,6 +1,13 @@
 import "./styles/Home.css";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 const Home = () => {
+  let history = useHistory();
+
+  function handleClick() {
+    history.push("/order");
+  }
+
   return (
     <div className="hero">
       <main>
@@ -13,7 +20,7 @@ const Home = () => {
           <span>KOD ACIKTIRIR</span>
           <span>PİZZA, DOYURUR</span>
         </h1>
-        <button>ACIKTIM</button>
+        <button onClick={handleClick}>ACIKTIM</button>
       </main>
     </div>
   );

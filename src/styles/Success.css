@@ -1,0 +1,40 @@
+.success-main {
+  height: 100vh;
+  width: 100vw;
+  background-color: #ce2829;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  padding-top: 50px;
+}
+
+.header .logo {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.success-main .content {
+  flex: 3;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+
+.content h1 {
+  color: white;
+  font-size: 4rem;
+  font-weight: 300;
+}
+
+.content span {
+  display: block;
+}
