@@ -9,6 +9,7 @@ import TextInputs from "./components/TextInputs";
 import PizzaBoyutSelector from "./components/PizzaBoyutSelector";
 import PizzaHamurSelector from "./components/PizzaHamurSelector";
 import PizzaExtras from "./components/PizzaExtras";
+import Footer from "./components/Footer";
 
 const initialForm = {
   pizzaSize: "",
@@ -201,8 +202,8 @@ export default function Order() {
             />
           </div>
         </form>
-        <footer></footer>
       </main>
+      <Footer />
     </>
   );
 }
