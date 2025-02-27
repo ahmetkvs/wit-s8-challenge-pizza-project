@@ -1,40 +1,91 @@
 .success-main {
-  height: 100vh;
-  width: 100vw;
+  min-height: 100vh;
   background-color: #ce2829;
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-header {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  width: 100%;
-  padding-top: 50px;
-}
-
-.header .logo {
+  padding: 2rem;
+  box-sizing: border-box;
   color: white;
-  font-size: 1.5rem;
-  font-weight: bold;
 }
 
-.success-main .content {
-  flex: 3;
+.success-main header {
   text-align: center;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 3rem 1rem;
+  width: 100%;
+  margin-bottom: 3rem;
+}
+
+.success-main header h2 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  margin-top: 1rem;
+}
+
+.successContent {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 600px;
+  background: #ce2829;
+  padding: 2rem;
+  text-align: center;
+  margin-top: 2rem;
+  border-top: 1px solid white;
+}
+
+.finalCheckout {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
-.content h1 {
-  color: white;
-  font-size: 4rem;
-  font-weight: 300;
+.finalCheckout h2 {
+  font-size: 1.5rem;
 }
 
-.content span {
-  display: block;
+.generalInfo p {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+}
+
+.checkoutInfo {
+  padding: 1rem;
+  border: 1px solid white;
+  border-radius: 8px;
+  margin-top: 1.5rem;
+  width: 50%;
+}
+
+.checkoutInfo h2 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.checkoutInfo section {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .successContent {
+    padding: 1.5rem;
+  }
+
+  .success-main header h2 {
+    font-size: 2rem;
+  }
+
+  .checkoutInfo section {
+    font-size: 1rem;
+  }
 }

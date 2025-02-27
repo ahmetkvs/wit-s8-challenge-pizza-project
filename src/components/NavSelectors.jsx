@@ -8,19 +8,23 @@ const selectors = [
   "Fast Food",
   "Gazlı İçecek",
 ];
+const getRandomKey = () => Math.random().toString(36).substr(2, 9);
 
-export default function NavSelectors() {
+export default function NavSelectors({ handleSelector, activeSelector }) {
   return (
     <div className="navSelectors">
       {selectors.map((item, index) => (
-        <div key={index} className="navSelector">
-          <button>
+        <div key={getRandomKey()} className="navSelector">
+          <button
+            onClick={() => handleSelector(index)}
+            className={index === activeSelector ? "active" : ""}
+          >
             <img
-              key={index}
+              key={getRandomKey()}
               src={`./images/iteration-2-images/icons/${index + 1}.svg`}
               alt=""
             />
-            <p key={index}>{item}</p>
+            <p key={getRandomKey()}>{item}</p>
           </button>
         </div>
       ))}

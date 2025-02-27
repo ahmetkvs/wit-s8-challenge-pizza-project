@@ -27,6 +27,11 @@ main .navSelectors {
   color: white;
 }
 
+.navSelector .active {
+  background-color: black;
+  color: white;
+}
+
 @media (max-width: 768px) {
   main .navSelectors {
     width: 90%;

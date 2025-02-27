@@ -1,4 +1,4 @@
-const extraIngrediants = [
+const extraIngredients = [
   "Sucuk",
   "Mantar",
   "Zeytin",
@@ -16,4 +16,4 @@ const extraIngrediants = [
   "Peynir",
 ];
 
-export default extraIngrediants;
+export default extraIngredients;

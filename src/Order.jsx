@@ -20,9 +20,8 @@ const linkStyle = {
 const BASE_PRICE = 80; //Change this later
 const EXTRA_PRICE = 5;
 
-export default function Order({ form, setForm, initialForm }) {
+export default function Order({ form, setForm }) {
   let history = useHistory();
-
   const [checkoutSum, setCheckoutSum] = useState(BASE_PRICE);
   const [errors, setErrors] = useState({});
   const [isValid, setIsValid] = useState(false);
@@ -90,7 +89,7 @@ export default function Order({ form, setForm, initialForm }) {
         totalPrice: checkoutSum,
       });
       console.log("Siparis Ozeti:", response.data);
-      setForm(initialForm);
+      //setForm(initialForm);
       setCheckoutSum(BASE_PRICE);
       history.push("/success");
     } catch (error) {

@@ -19,17 +19,16 @@ const initialForm = {
 
 const App = () => {
   const [form, setForm] = useState(initialForm);
-  const [itemPrice, setItemPrice] = useState(85);
   return (
     <Switch>
       <Route exact path="/">
-        <Home setItemPrice={setItemPrice} />
+        <Home />
       </Route>
       <Route path="/order">
         <Order form={form} setForm={setForm} initialForm={initialForm} />
       </Route>
       <Route path="/success">
-        <Success />
+        <Success form={form} />
       </Route>
     </Switch>
   );
