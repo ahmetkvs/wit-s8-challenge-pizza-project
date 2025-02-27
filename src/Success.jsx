@@ -10,6 +10,7 @@ export default function Success() {
         <h1>
           <span>TEBRIKLER!</span>
           <span>SİPARİŞİNİZ ALINDI!</span>
+          <p></p>
         </h1>
       </div>
     </div>

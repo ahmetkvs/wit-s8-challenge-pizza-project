@@ -11,15 +11,6 @@ import PizzaHamurSelector from "./components/PizzaHamurSelector";
 import PizzaExtras from "./components/PizzaExtras";
 import Footer from "./components/Footer";
 
-const initialForm = {
-  pizzaSize: "",
-  pizzaDoughThickness: "",
-  choosenExtras: [],
-  userName: "",
-  userNote: "",
-  pizzaCounter: 1,
-};
-
 const linkStyle = {
   textDecoration: "none",
   color: "white",
@@ -29,10 +20,9 @@ const linkStyle = {
 const BASE_PRICE = 80; //Change this later
 const EXTRA_PRICE = 5;
 
-export default function Order() {
+export default function Order({ form, setForm, initialForm }) {
   let history = useHistory();
 
-  const [form, setForm] = useState(initialForm);
   const [checkoutSum, setCheckoutSum] = useState(BASE_PRICE);
   const [errors, setErrors] = useState({});
   const [isValid, setIsValid] = useState(false);
