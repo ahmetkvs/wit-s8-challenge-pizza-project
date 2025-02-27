@@ -1,15 +1,8 @@
 import "./styles/Home.css";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import Footer from "./components/Footer";
-
-const selectors = [
-  "Yeni! Bowl",
-  "Pizza",
-  "Burger",
-  "Kızartmalar",
-  "Fast Food",
-  "Gazlı İçecek",
-];
+import NavSelectors from "./components/NavSelectors";
+import Cards from "./components/Cards";
 
 const Home = ({ setItemPrice }) => {
   let history = useHistory();
@@ -27,6 +20,7 @@ const Home = ({ setItemPrice }) => {
             alt=""
             className="hero-logo"
           />
+          <p className="ital1">firsatı kaçırma</p>
           <h1 className="hero-slogan">
             <span>KOD ACIKTIRIR</span>
             <span>PİZZA, DOYURUR</span>
@@ -37,36 +31,14 @@ const Home = ({ setItemPrice }) => {
         </section>
       </div>
       <main>
-        <div className="navSelectors">
-          {selectors.map((item, index) => (
-            <div className="navSelector">
-              <img
-                src={`./images/iteration-2-images/icons/${index + 1}.svg`}
-                alt=""
-              />
-              <p>{item}</p>
-            </div>
-          ))}
-        </div>
-        <div className="cards">
-          <div className="cardsLeft">
-            <div className="bigCard"></div>
-          </div>
-          <div className="cardsRight">
-            <div className="smallCard"></div>
-            <div className="smallCard"></div>
-          </div>
-        </div>
+        <NavSelectors />
+        <Cards />
         <div className="menu">
-          <div className="menuHeadings"></div>
-          <div className="menuSelectors">
-            <div className="menuSelector"></div>
-            <div className="menuSelector"></div>
-            <div className="menuSelector"></div>
-            <div className="menuSelector"></div>
-            <div className="menuSelector"></div>
-            <div className="menuSelector"></div>
+          <div className="menuHeadings">
+            <h2 className="ital2">en çok paketlenen menüler</h2>
+            <h2>Acıktıran Kodlara Doyuran Lezzetler</h2>
           </div>
+          <NavSelectors />
           <div className="menuItems"></div>
         </div>
       </main>
