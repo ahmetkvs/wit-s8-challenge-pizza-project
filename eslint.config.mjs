@@ -33,7 +33,7 @@ export default [
     },
   },
   {
-    files: ["**/*.cy.js"], // Apply only to Cypress spec files
+    files: ["**/*.cy.js"],
     plugins: {
       cypress,
     },

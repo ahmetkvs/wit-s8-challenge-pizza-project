@@ -60,7 +60,7 @@ export default function Order() {
     setIsValid(Object.keys(newErrors).length === 0);
   }, [form]);
 
-  console.log(form);
+  //console.log(form);
 
   const handleChange = (event) => {
     const { name, value, type, checked } = event.target;
