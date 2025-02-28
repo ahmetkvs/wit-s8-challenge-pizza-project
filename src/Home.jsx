@@ -9,7 +9,7 @@ import MenuItems from "./components/MenuItems";
 const Home = () => {
   let history = useHistory();
 
-  const [activeSelector, setActiveSelector] = useState(1);
+  const [activeSelector, setActiveSelector] = useState(2);
   console.log("Active Selector" + activeSelector);
 
   function handleClick() {

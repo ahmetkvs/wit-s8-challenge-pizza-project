@@ -1,4 +1,5 @@
 import "../styles/NavSelectors.css";
+import { customAlphabet } from "nanoid";
 
 const selectors = [
   "Yeni! Bowl",
@@ -8,23 +9,23 @@ const selectors = [
   "Fast Food",
   "Gazlı İçecek",
 ];
-const getRandomKey = () => Math.random().toString(36).substr(2, 9);
+const generateId = customAlphabet("123456789", 10);
 
 export default function NavSelectors({ handleSelector, activeSelector }) {
   return (
     <div className="navSelectors">
       {selectors.map((item, index) => (
-        <div key={getRandomKey()} className="navSelector">
+        <div key={generateId()} className="navSelector">
           <button
             onClick={() => handleSelector(index)}
             className={index === activeSelector ? "active" : ""}
           >
             <img
-              key={getRandomKey()}
+              key={generateId()}
               src={`./images/iteration-2-images/icons/${index + 1}.svg`}
               alt=""
             />
-            <p key={getRandomKey()}>{item}</p>
+            <p key={generateId()}>{item}</p>
           </button>
         </div>
       ))}
