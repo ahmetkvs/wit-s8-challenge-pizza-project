@@ -8,15 +8,15 @@ export default function MenuItems({ activeSelector }) {
         return (
           <div className="triplet">
             <div className="tripletBowl">
-              <img src="./images/newImages/bowl1-removebg-preview.png" alt="" />
+              <img src="/images/newImages/bowl1-removebg-preview.png" alt="" />
               <PizzaFooter />
             </div>
             <div className="tripletBowl">
-              <img src="./images/newImages/bowl2-removebg-preview.png" alt="" />
+              <img src="/images/newImages/bowl2-removebg-preview.png" alt="" />
               <PizzaFooter />
             </div>
             <div className="tripletBowl">
-              <img src="./images/newImages/bowl3-removebg-preview.png" alt="" />
+              <img src="/images/newImages/bowl3-removebg-preview.png" alt="" />
               <PizzaFooter />
             </div>
           </div>
@@ -25,22 +25,19 @@ export default function MenuItems({ activeSelector }) {
         return (
           <div className="triplet">
             <div className="tripletPizza">
+              <img src="/images/newImages/pizza1-removebg-preview.png" alt="" />
+              <PizzaFooter />
+            </div>
+            <div className="tripletPizza">
               <img
-                src="./images/newImages/pizza1-removebg-preview.png"
+                src="/images/iteration-2-images/pictures/food-1.png"
                 alt=""
               />
               <PizzaFooter />
             </div>
             <div className="tripletPizza">
               <img
-                src="./images/iteration-2-images/pictures/food-1.png"
-                alt=""
-              />
-              <PizzaFooter />
-            </div>
-            <div className="tripletPizza">
-              <img
-                src="./images/iteration-2-images/pictures/food-2.png"
+                src="/images/iteration-2-images/pictures/food-2.png"
                 alt=""
               />
               <PizzaFooter />
@@ -52,21 +49,21 @@ export default function MenuItems({ activeSelector }) {
           <div className="triplet">
             <div className="tripletHamburger">
               <img
-                src="./images/newImages/hamburger1-removebg-preview.png"
+                src="/images/newImages/hamburger1-removebg-preview.png"
                 alt=""
               />
               <PizzaFooter />
             </div>
             <div className="tripletHamburger">
               <img
-                src="./images/newImages/hamburger2-removebg-preview.png"
+                src="/images/newImages/hamburger2-removebg-preview.png"
                 alt=""
               />
               <PizzaFooter />
             </div>
             <div className="tripletHamburger">
               <img
-                src="./images/iteration-2-images/pictures/food-3.png"
+                src="/images/iteration-2-images/pictures/food-3.png"
                 alt=""
               />
               <PizzaFooter />
@@ -78,21 +75,21 @@ export default function MenuItems({ activeSelector }) {
           <div className="triplet">
             <div className="tripletFries">
               <img
-                src="./images/newImages/cheeseSticks-removebg-preview.png"
+                src="/images/newImages/cheeseSticks-removebg-preview.png"
                 alt=""
               />
               <PizzaFooter />
             </div>
             <div className="tripletFries">
               <img
-                src="./images/newImages/curlyfries-removebg-preview.png"
+                src="/images/newImages/curlyfries-removebg-preview.png"
                 alt=""
               />
               <PizzaFooter />
             </div>
             <div className="tripletFries">
               <img
-                src="./images/newImages/frenchFries-removebg-preview.png"
+                src="/images/newImages/frenchFries-removebg-preview.png"
                 alt=""
               />
               <PizzaFooter />
@@ -103,15 +100,15 @@ export default function MenuItems({ activeSelector }) {
         return (
           <div className="triplet">
             <div className="tripletMenus">
-              <img src="./images/newImages/menu1-removebg-preview.png" alt="" />
+              <img src="/images/newImages/menu1-removebg-preview.png" alt="" />
               <PizzaFooter />
             </div>
             <div className="tripletMenus">
-              <img src="./images/newImages/menu2-removebg-preview.png" alt="" />
+              <img src="/images/newImages/menu2-removebg-preview.png" alt="" />
               <PizzaFooter />
             </div>
             <div className="tripletMenus">
-              <img src="./images/newImages/menu3-removebg-preview.png" alt="" />
+              <img src="/images/newImages/menu3-removebg-preview.png" alt="" />
               <PizzaFooter />
             </div>
           </div>
@@ -121,21 +118,21 @@ export default function MenuItems({ activeSelector }) {
           <div className="triplet">
             <div className="tripletDrinks">
               <img
-                src="./images/newImages/softDrink1-removebg-preview.png"
+                src="/images/newImages/softDrink1-removebg-preview.png"
                 alt=""
               />
               <PizzaFooter />
             </div>
             <div className="tripletDrinks">
               <img
-                src="./images/newImages/softDrink2-removebg-preview.png"
+                src="/images/newImages/softDrink2-removebg-preview.png"
                 alt=""
               />
               <PizzaFooter />
             </div>
             <div className="tripletDrinks">
               <img
-                src="./images/newImages/softDrink3-removebg-preview.png"
+                src="/images/newImages/softDrink3-removebg-preview.png"
                 alt=""
               />
               <PizzaFooter />

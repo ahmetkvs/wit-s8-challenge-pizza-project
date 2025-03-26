@@ -5,7 +5,7 @@ export default function Success({ form }) {
   return (
     <div className="success-main">
       <header>
-        <img src="./images/iteration-1-images/logo.svg" alt="" />
+        <img src="/images/iteration-1-images/logo.svg" alt="" />
         <p className="ital1">lezzetin yolda</p>
         <h2>SİPARİŞİNİZ ALINDI!</h2>
       </header>

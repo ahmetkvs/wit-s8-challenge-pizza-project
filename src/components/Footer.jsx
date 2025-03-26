@@ -8,27 +8,27 @@ export default function Footer() {
         <div className="footerContentLeft">
           <div className="leftColL">
             <img
-              src="./images/iteration-2-images/footer/logo-footer.svg"
+              src="/images/iteration-2-images/footer/logo-footer.svg"
               alt=""
             />
             <ul>
               <li>
                 <img
-                  src="./images/iteration-2-images/footer/icons/icon-1.png"
+                  src="/images/iteration-2-images/footer/icons/icon-1.png"
                   alt=""
                 />
                 341 Londonderry Roda, Istanbul Türkiye
               </li>
               <li>
                 <img
-                  src="./images/iteration-2-images/footer/icons/icon-2.png"
+                  src="/images/iteration-2-images/footer/icons/icon-2.png"
                   alt=""
                 />
                 aciktim@teknolojikyemekler.com
               </li>
               <li>
                 <img
-                  src="./images/iteration-2-images/footer/icons/icon-3.png"
+                  src="/images/iteration-2-images/footer/icons/icon-3.png"
                   alt=""
                 />
                 +90 216 123 45 67
@@ -51,27 +51,27 @@ export default function Footer() {
           <h3>Instagram</h3>
           <div className="footerContentGallery">
             <img
-              src="./images/iteration-2-images/footer/insta/li-0.png"
+              src="/images/iteration-2-images/footer/insta/li-0.png"
               alt="pizzaFoto"
             />
             <img
-              src="./images/iteration-2-images/footer/insta/li-1.png"
+              src="/images/iteration-2-images/footer/insta/li-1.png"
               alt="sosisFoto"
             />
             <img
-              src="./images/iteration-2-images/footer/insta/li-2.png"
+              src="/images/iteration-2-images/footer/insta/li-2.png"
               alt="pizza2Foto"
             />
             <img
-              src="./images/iteration-2-images/footer/insta/li-3.png"
+              src="/images/iteration-2-images/footer/insta/li-3.png"
               alt="hamburger1"
             />
             <img
-              src="./images/iteration-2-images/footer/insta/li-4.png"
+              src="/images/iteration-2-images/footer/insta/li-4.png"
               alt="hamburger2"
             />
             <img
-              src="./images/iteration-2-images/footer/insta/li-5.png"
+              src="/images/iteration-2-images/footer/insta/li-5.png"
               alt="hamburger3"
             />
           </div>

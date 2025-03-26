@@ -124,7 +124,7 @@ export default function Order({ form, setForm }) {
     <>
       <header>
         <div className="header-content">
-          <img src="./images/iteration-1-images/logo.svg" alt="logo" />
+          <img src="/images/iteration-1-images/logo.svg" alt="logo" />
           <nav id="order-nav">
             <Link to="/" style={linkStyle}>
               Ana Sayfa

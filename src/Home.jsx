@@ -25,7 +25,7 @@ const Home = () => {
       <div className="hero">
         <section>
           <img
-            src="./images/iteration-1-images/logo.svg"
+            src="/images/iteration-1-images/logo.svg"
             alt=""
             className="hero-logo"
           />
