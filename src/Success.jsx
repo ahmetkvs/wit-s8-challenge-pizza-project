@@ -24,7 +24,7 @@ export default function Success({ form }) {
               <span>{form.choosenExtras.length * 5}</span>
             </section>
             <section>
-              <span>Seçimler</span>
+              <span>Toplam</span>
               <span>{form.choosenExtras.length * 5 + initalPrice}</span>
             </section>
           </div>
